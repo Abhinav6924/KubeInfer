@@ -1,17 +1,3 @@
-#!/usr/bin/env python3
-"""
-Live vLLM monitor - KV cache, queue, throughput, latency.
-
-Auto-detects --num-layers/--num-kv-heads/--head-dim (from the model's
-config.json via transformers) and --total-kv-tokens/--block-size (from
-vLLM's /metrics cache_config_info gauge) on startup, so it can usually
-just be run as:
-
-    python vllm_monitor.py --host 0.0.0.0 --port 8000
-
-Manual flags still override auto-detection if given. Use --no-autodetect
-to disable it entirely (e.g. old vLLM builds without cache_config_info).
-"""
 
 import argparse
 import asyncio
